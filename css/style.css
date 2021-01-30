@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.principal{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    margin: 5px;
+}
+textarea{
+    margin: 10px;
+}
+.qr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+.qrcode{
+    margin: 10px;
+}
