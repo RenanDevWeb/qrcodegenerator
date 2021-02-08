@@ -9,35 +9,22 @@
 </head>
 <body>
     
-    <p class="text-center text-uppercase ">gerador de QrCode</p>
+    <h3 class="text-center text-uppercase ">gerador de QrCode</h3>
 
 <div class="container principal">
-    <label class="fs-5" for="inputText">Digite o Texto</label>
+    <label for="inputText">Digite o Texto</label>
     <div class="texto"></div>
-    <textarea name="inputText" id="input" class="form-control" cols="5" rows="4"></textarea>
-    <button  class="btn btn-primary" onclick="gerarQrCode()">Gerar QrCode</button>
+    <input type="text" name="inputText" id="inputText" class="form-control"  maxlength="165"></input>
+    <button  class="btn btn-primary" onclick="GerarQrCode()">Gerar QrCode</button>
 </div>
 
   <div class="container qr">
     <div id="qrcode" class="qrcode"></div>
+    <a id="download" class='btn btn-success disabled' href="" download="qrcode.png">Baixar QRCODE</a>
   </div>
   
     
-    <script src="./qrcode.min.js"></script>
+    <script src="./js/qrcode.min.js"></script>
     <script src="./js/style.js"></script>
-    <!-- <script type="text/javascript">
-        const qrcode =  new QRCode("qrcode");
-
-        function gerarQrCode(){
-            const texto =  document.getElementById('input').value
-            if(!texto){
-                alert("digite o texto a ser gerado")
-                texto.focus()
-                return;
-            } 
-            qrcode.makeCode(texto)
-        }
-    </script> -->
-
 </body>
 </html>

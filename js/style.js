@@ -1,13 +1,29 @@
+let divQr = document.getElementById('qrcode')
+let buttonDownload = document.getElementById('download')
+  
 
 
-const qrcode =  new QRCode("qrcode");
-
-function gerarQrCode(){
-    const texto =  document.getElementById('input').value
-    if(!texto){
-        alert("digite o texto a ser gerado")
-        texto.focus()
-        return;
-    } 
-    qrcode.makeCode(texto)
+function GerarQrCode(){
+    let inputText = document.getElementById('inputText').value;
+    divQr.innerHTML = ''
+    new QRCode(divQr,{
+        text: inputText,
+        width: 150,
+        height: 150
+    })
+    setTimeout(() => {
+        baixarQrcode();
+    },1000)
 }
+
+function  baixarQrcode(){
+    let imagemQrCode = divQr.querySelector('img').src
+    buttonDownload.href = imagemQrCode;
+    liberarDownload(true);
+ }
+
+ function liberarDownload(confirmacao){
+     if(confirmacao){
+        buttonDownload.classList.remove('disabled');
+     }
+ }
